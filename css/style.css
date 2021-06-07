@@ -1,0 +1,603 @@
+/* Start variables */
+:root{
+    --main-color: #f73538;
+    --h-color: #333;
+    --p-color: #777;
+}
+/* End variables */
+
+/* Start Global Elements */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+h1, h2, h3, h4, h5, h6{
+    color: var(--h-color);
+}
+p{
+    color: var(--p-color);
+    line-height: 1.6;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+input:focus,
+textarea:focus{
+    outline: none;
+}
+/* End Global Elements */
+
+/* Start Componetes */
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.padding-100{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.padding-50{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+/* End Componetes */
+
+/* ------------------------------------ / Start Header/ ----------------------------------- */
+.header{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: #eee;
+    height: 60px;
+    line-height: 60px;
+    z-index: 9999;
+}
+.header .box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+.header .box .logo,
+.header .box .nav{
+    flex-basis: 50%;
+    height: 100%;
+    /* background-color: #eee; */
+}
+.header .box .nav ul{
+    display: flex;
+    justify-content: flex-end;
+}
+.header .box .nav i{
+    display: none;
+}
+.header .box .nav ul li a{
+    color: #000;
+    margin: 0 5px;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 18px 20px;
+    transition: all 0.3s ease-out;
+    border-bottom: 2px solid transparent;
+}
+.header .box .nav ul li a.active,
+.header .box .nav ul li a:hover{
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+}
+@media(max-width: 991px){
+    .header .box .nav i{
+        display: block;
+        text-align: right;
+        font-size: 25px;
+        cursor: pointer;
+    }
+    .header .box .nav ul{
+        position: absolute;
+        left: 0;
+        top: 60px;
+        background-color: #fff;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        z-index: -1;
+    }
+    .header .box .nav ul.active{
+        display: block;
+    }
+    .header .box .nav ul.show{
+        animation: ZommIn 0.3s ease-out;
+    }
+    @keyframes ZommIn {
+        0%{
+            transform: translateY(-100%);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+}
+/* ------------------------------------ / End Header/ ----------------------------------- */
+
+/* ------------------------------------ / Start Landing/ ----------------------------------- */
+.landing{
+    position: relative;
+    background-image: url("../img/WhatsApp\ Image\ 2021-06-03\ at\ 05.46.37.jpeg");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+.landing::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 70%);
+}
+.landing .container{
+    height: 100%;
+}
+.landing .box{
+    padding-top: 60px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.landing .box .text{
+    text-align: center;
+    max-width: 500px;
+}
+.landing .box .text h1{
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+.landing .box .text a{
+    color: #fff;
+    padding: 10px 50px;
+    background-color: var(--main-color);
+    font-size: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease-out;
+}
+.landing .box .text a:hover{
+    opacity: 0.7;
+}
+.landing .box .text p{
+    padding-top: 30px;
+    color: #eee;
+    font-size: 18px;
+}
+/* ------------------------------------ / End Landing/ ----------------------------------- */
+
+/* ------------------------------------ / Start About/ ----------------------------------- */
+.about{
+    position: relative;
+}
+.about::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    border-width: 200px;
+    border-color: transparent  #f73538c4  #f73538c4 transparent;
+    border-style: solid;
+    z-index: 1;
+}
+.about .box{
+    display: flex;
+    justify-content: space-between;
+}
+.about .box .text{
+    flex-basis: 70%;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.about .box .text > span{
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.about .box .text h2{
+    font-size: 30px;
+    padding: 10px 0 30px;
+}
+.about .box .text h2 span{
+    color: var(--main-color);
+    padding-left: 5px;
+}
+.about .box .img{
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+}
+.about .box .img img{
+    width: 100%;
+    max-width: 400px;
+    text-align: right;
+}
+/* ------------------------------------ / End About/ ----------------------------------- */
+
+/* ------------------------------------ / Start portfolio/ ----------------------------------- */
+.portfolio{
+    background-image: url("../img/WhatsApp\ Image\ 2021-06-03\ at\ 05.46.43.jpeg");
+    background-size: cover;
+}
+.portfolio .container{
+    position: relative;
+    z-index: 10;
+}
+.portfolio .heading{
+    text-align: center;
+}
+.portfolio .heading span{
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.portfolio .heading h2{
+    font-size: 30px;
+    padding: 5px 0 80px;
+}
+.portfolio .box{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px 20px;
+}
+.portfolio .box .text{
+    padding: 30px;
+    border: 0;
+    text-align: center;
+}
+.portfolio .box .text i{
+    color: var(--main-color);
+}
+.portfolio .box .text h3{
+    padding: 10px 0 20px;
+}
+/* ------------------------------------ / End portfolio/ ----------------------------------- */
+
+/* ------------------------------------ / Start tap/ ----------------------------------- */
+.tap{
+    position: relative;
+    overflow: hidden;
+}
+.tap::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-width: 200px;
+    border-color: transparent transparent var(--main-color) var(--main-color);
+    border-style: solid;
+    z-index: -1;
+}
+.tap .box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tap .box .info{
+    flex-basis: 48%;
+}
+.tap .box .info img{
+    max-width: 100%;
+}
+.tap .box .info > span{
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.tap .box .info h2{
+    font-size: 30px;
+    padding: 5px 0 30px;
+}
+.tap .box .info h2 span{
+    color: var(--main-color);
+    padding-left: 3px;
+}
+/* ------------------------------------ / End tap/ ----------------------------------- */
+
+/* ------------------------------------ / Start servesis/ ----------------------------------- */
+.servesis{
+    position: relative;
+    background-image: url("../img/146-1468253_parachute-space-background-image-1080p.jpg");
+    background-size: cover;
+}
+.servesis::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 70%);
+}
+.servesis .container{
+    position: relative;
+    z-index: 11;
+}
+.servesis .box-top{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px 20px;
+}
+.servesis .box-top .text{
+    text-align: center;
+}
+.servesis .box-top .text img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.servesis .box-top .text h3{
+    padding: 10px 0;
+    color: #fff;
+}
+.servesis .box-top .text span{
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.servesis .box-top .text p{
+    padding: 20px 0 80px;
+}
+.servesis .box-bottom{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px 20px;
+    text-align: center;
+}
+.servesis .box-bottom img{
+    width: 150px;
+    max-width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+.servesis .box-bottom img:hover{
+    opacity: 0.5;
+}
+/* ------------------------------------ / End servesis/ ----------------------------------- */
+
+/* ------------------------------------ / Start some/ ----------------------------------- */
+.some{
+    background-color: #eee;
+    padding-top: 50px;
+}
+.some .box .text{
+    text-align: center;
+    margin: 0 auto;
+}
+.some .box .text span{
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.some .box .text h2{
+    font-size: 30px;
+    padding: 5px 0 30px;
+}
+.some .box .text p{
+    padding: 20px 0 30px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.some .box .text img{
+    width: 100%;
+    max-width: 600px;
+}
+/* ------------------------------------ / End some/ ----------------------------------- */
+
+/* ------------------------------------ / Start contact/ ----------------------------------- */
+.contact{
+    margin-top: -4px;
+    background-color: #22264c;
+}
+.contact .box{
+    text-align: center;
+}
+.contact .box .text{
+    text-align: center;
+}
+.contact .box .text > span{
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.contact .box .text h2{
+    font-size: 30px;
+    color: #fff;
+    padding: 5px 0 80px;
+}
+.contact .box .text h2 span{
+    color: var(--main-color);
+}
+.contact .box form{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px 20px;
+}
+.contact .box form input{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    color: #fff;
+    border: none;
+    background-color: #4e54758e;
+}
+.contact .box form input[type="submit"]{
+    background-color: var(--main-color);
+    border: none;
+    text-align: center;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+.contact .box form input[type="submit"]:hover{
+    opacity: 0.7;
+}
+.contact .box p{
+    margin-top: 40px;
+    color: #eee;
+}
+/* ------------------------------------ / End contact/ ----------------------------------- */
+
+/* ------------------------------------ / Start footer/ ----------------------------------- */
+.footer1{
+    position: relative;
+}
+.footer1::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 100px;
+    border-color: var(--main-color) var(--main-color) transparent transparent;
+    border-style: solid;
+    z-index: 1;
+}
+.footer1 .box{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 40px 20px;
+}
+.footer1 .box .text h2{
+    margin-bottom: 20px;
+}
+.footer1 .box .one h2 a{
+    position: relative;
+    padding-left: 2px;
+    color: #FFF;
+}
+.footer1 .box .one h2 a::before{
+    content: "";
+    position: absolute;
+    right: -37px;
+    top: -14px;
+    border-color: transparent transparent transparent var(--main-color);
+    border-width: 31px;
+    border-style: solid;
+    z-index: -1;
+    border-radius: 18px;
+}
+
+.footer1 .box .four input[type="email"]{
+    width: 70%;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    background-color: #eee;
+    padding-left: 10px;
+    border: 1px solid #aaa;
+    border-right: none;
+}
+.footer1 .box .four input[type="submit"]{
+    width: 29.1%;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    background-color: var(--main-color);
+    color: #fff;
+    margin-left: -5px;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+.footer1 .box .four input[type="submit"]:hover{
+    opacity: 0.7;
+}
+
+.footer1 .box .icon{
+    margin-top: 20px;
+}
+.footer1 .box .icon i{
+    margin-left: 10px;
+    font-size: 20px;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+.footer1 .box .icon i:hover{
+    opacity: 1;
+}
+/* ------------------------------------ / End footer/ ----------------------------------- */
+
+/* Start Medea */
+@media(max-width: 991px){
+    .order{
+        order: -1;
+    }
+    .about .box .text,
+    .container{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .about .box{
+        flex-direction: column;
+    }
+    .tap .box .info,
+    .about .box .text,
+    .about .box .img{
+        flex-basis: 100%;
+    }
+    .tap .box{
+        flex-direction: column;
+    }
+    .tap .box .info p{
+        margin-bottom: 50px;
+    }
+}
+@media(max-width: 767px){
+    .about .box .text,
+    .container{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .landing{
+        height: 70vh;
+    }
+}
+@media(max-width: 576px){
+    .about .box .text,
+    .container{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .contact .box .text h2,
+    .tap .box .info h2,
+    .about .box .text h2,
+    .landing .box .text h1 {
+        font-size: 24px;
+    }
+    .about::before,
+    .tap::before{
+        border-width: 180px;
+    }
+    .portfolio{
+        background-image: none;
+        background-color: #eee;
+    }
+    .portfolio .heading h2 {
+        padding: 5px 0 30px;
+    }
+}
